@@ -1,20 +1,11 @@
 {
   "recommendations": [
-    // テキストファイルのフォーマットを統一するため
+    // ソースコードのフォーマットを統一
     "EditorConfig.EditorConfig",
-    // フォーマットを統一するため
     "esbenp.prettier-vscode",
-    // コードの品質を保つため
-    "dbaeumer.vscode-eslint",
-    // CSSのフォーマットを統一するため
     "stylelint.vscode-stylelint",
-    // タグ名をリネームした際に、対応する閉じタグもリネームしてくれる
+    "dbaeumer.vscode-eslint",
+    // タグ編集時にリネームをする
     "formulahendry.auto-rename-tag",
-    // コメントをハイライトしてくれる
-    "wayou.vscode-todo-highlight",
-    // Markdown の記述をしやすくしてくれる
-    "yzhang.markdown-all-in-one"
   ],
-  // List of extensions recommended by VS Code that should not be recommended for users of this workspace.
-  "unwantedRecommendations": []
 }
