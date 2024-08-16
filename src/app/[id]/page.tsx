@@ -1,4 +1,5 @@
 "use client";
+import SideMenu from "@/components/SideMenu";
 import dynamic from "next/dynamic";
 import { useParams } from "next/navigation";
 const Editor = dynamic(() => import("@/components/Editor"), {
@@ -16,15 +17,15 @@ const Editor = dynamic(() => import("@/components/Editor"), {
 });
 export default function Home() {
   // パスパラメータから値を取得
-  const params = useParams();
+  const { id } = useParams();
   // FIXME: 簡易エラー表示
-  if (typeof params.id !== "string") {
+  if (typeof id !== "string") {
     throw new Error("Invalid ID");
   }
   return (
     <div className="p-2 h-screen flex">
-      {params.id && <Editor roomID={params.id} />}
-      {/* TODO: PC用サイドメニューの作成 */}
+      <Editor roomID={id} />
+      <SideMenu roomID={id} />
     </div>
   );
 }
