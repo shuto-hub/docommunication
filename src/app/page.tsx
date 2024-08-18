@@ -1,7 +1,7 @@
+import HistoryContainer from "@/components/container/HistoryContainer";
 import TopButton from "@/components/TopButton";
 import { randomUUID } from "crypto";
 import Image from "next/image";
-import Link from "next/link";
 
 export default function Home() {
   const roomID = randomUUID();
@@ -17,6 +17,7 @@ export default function Home() {
         />
       </h1>
       <TopButton roomID={roomID} />
+      <HistoryContainer />
     </main>
   );
 }
