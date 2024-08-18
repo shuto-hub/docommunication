@@ -56,21 +56,14 @@ export const Editor: React.FC = () => {
     <div className={"p-2"}>
       <div
         className={
-          "text-lg p-4 leading-loose bg-slate-900 text-white rounded-xl border-2"
+          "text-lg p-4 leading-loose bg-slate-900 text-white rounded-xl border-2 relative"
         }
       >
         <LexicalComposer initialConfig={initialConfig}>
           <RichTextPlugin
             contentEditable={<ContentEditable />}
             placeholder={
-              <div
-                className="flex w-full h-full justify-center items-center"
-                aria-label="読み込み中"
-              >
-                <div className="animate-ping h-2 w-2 bg-white rounded-full"></div>
-                <div className="animate-ping h-2 w-2 bg-white rounded-full mx-4"></div>
-                <div className="animate-ping h-2 w-2 bg-white rounded-full"></div>
-              </div>
+              <p className="text-slate-300 absolute top-4">Enter a text</p>
             }
             ErrorBoundary={LexicalErrorBoundary}
           />

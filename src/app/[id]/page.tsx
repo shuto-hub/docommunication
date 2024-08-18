@@ -23,8 +23,19 @@ const Detail = () => {
     <>
       <Header roomID={id} />
       <div className="p-2">
-        <RoomProvider id="my-room" initialPresence={{}}>
-          <ClientSideSuspense fallback="Loading…">
+        <RoomProvider id={id} initialPresence={{}}>
+          <ClientSideSuspense
+            fallback={
+              <div
+                className="flex w-full h-full justify-center items-center"
+                aria-label="読み込み中"
+              >
+                <div className="animate-ping h-2 w-2 bg-white rounded-full"></div>
+                <div className="animate-ping h-2 w-2 bg-white rounded-full mx-4"></div>
+                <div className="animate-ping h-2 w-2 bg-white rounded-full"></div>
+              </div>
+            }
+          >
             <Editor />
           </ClientSideSuspense>
         </RoomProvider>
