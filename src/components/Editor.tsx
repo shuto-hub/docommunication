@@ -20,9 +20,14 @@ type EditorProps = {
 };
 
 const Editor: FC<EditorProps> = ({ roomID }) => {
-  const provider = new WebsocketProvider("ws://localhost:1234", roomID, doc, {
-    WebSocketPolyfill: WebSocket,
-  });
+  const provider = new WebsocketProvider(
+    `ws://${process.env.NEXT_PUBLIC_WEBSOCKET_HOST_URL}:1234`,
+    roomID,
+    doc,
+    {
+      WebSocketPolyfill: WebSocket,
+    }
+  );
 
   new IndexeddbPersistence(roomID, doc);
 
