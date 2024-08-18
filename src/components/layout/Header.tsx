@@ -9,7 +9,10 @@ type HeaderProps = {
 // ヘッダー
 const Header: FC<HeaderProps> = ({ roomID }) => {
   return (
-    <div className="items-center sticky flex top-0 z-10 w-screen h-10 bg-white border-b border-slate-300">
+    <div
+      data-testid="header"
+      className="items-center sticky flex top-0 z-10 w-screen h-10 bg-white border-b border-slate-300"
+    >
       <Link href="/">
         <Image
           src="/icon/logo_icon.png"
