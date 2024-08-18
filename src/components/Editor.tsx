@@ -21,7 +21,7 @@ type EditorProps = {
 
 const Editor: FC<EditorProps> = ({ roomID }) => {
   const provider = new WebsocketProvider(
-    `ws://${process.env.NEXT_PUBLIC_WEBSOCKET_HOST_URL}:1234`,
+    `wss://${process.env.NEXT_PUBLIC_WEBSOCKET_HOST_URL}:1234`,
     roomID,
     doc,
     {
