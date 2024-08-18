@@ -24,7 +24,7 @@ const Header: FC<HeaderProps> = ({ roomID }) => {
       <p className="ml-auto text-[10px] md:text-sm">ルームID：{roomID}</p>
       <ShareButton
         iconUrl="/icon/sns/x.svg"
-        shareUrl={`http://twitter.com/share?url=https://docommunication.xyz/${roomID}&text=ここから編集に参加しましょう！&hashtags=#docommunication`}
+        shareUrl={`http://twitter.com/share?url=${process.env.NEXT_PUBLIC_HOST_URL}/${roomID}&text=ここから編集に参加しましょう！&hashtags=#docommunication`}
         text="シェアする"
       />
     </div>
