@@ -7,12 +7,12 @@ import "@blocknote/mantine/style.css";
 import { getRandomUser } from "@/utils/randomUser";
 import * as Y from "yjs";
 import { FC } from "react";
+import { IndexeddbPersistence } from "y-indexeddb";
 
 const doc = new Y.Doc();
 
 /**
  * y-websocketを使ったプロバイダを設定
- * TODO: 永続化する
  */
 const { WebsocketProvider } = require("y-websocket");
 type EditorProps = {
@@ -20,7 +20,11 @@ type EditorProps = {
 };
 
 const Editor: FC<EditorProps> = ({ roomID }) => {
-  const provider = new WebsocketProvider("ws://localhost:1234", roomID, doc);
+  const provider = new WebsocketProvider("ws://localhost:1234", roomID, doc, {
+    WebSocketPolyfill: WebSocket,
+  });
+
+  new IndexeddbPersistence(roomID, doc);
 
   const editor: BlockNoteEditor | null = useCreateBlockNote({
     dictionary: locales.ja,
