@@ -11,20 +11,22 @@ https://docommunication.xyz/
 
 ## Getting Started
 
-* voltaで実行環境を管理しているため、voltaのインストールを推奨しています
+1. voltaで実行環境を管理しているため、voltaのインストールを推奨しています
 
 ```bash
 curl https://get.volta.sh | bash
 ```
 
-* もしくはnodeとyarnを以下のバージョンに合わせてください
+(もしくはnodeとyarnを以下のバージョンに合わせてください)
 
 ```
 "node": "22.6.0"
 "yarn": "4.4.0"
 ```
 
-* 以下コマンドにより http://localhost:3000 にてローカル環境が起動できます
+2. 環境編集でホスト名を取得している箇所があるため、ルートディレクトリに`.env.local`を作成し、`.env.example`の内容をコピーしてください
+
+3. 以下コマンドにより http://localhost:3000 にてローカル環境が起動できます
 
 ```bash
 yarn install
