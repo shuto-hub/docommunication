@@ -18,11 +18,11 @@ const Header: FC<HeaderProps> = ({ roomID }) => {
           height="30"
         />
       </Link>
-      <p className="ml-auto">ルームID：{roomID}</p>
+      <p className="ml-auto text-[10px] md:text-sm">ルームID：{roomID}</p>
       <ShareButton
         iconUrl="/icon/sns/x.svg"
         shareUrl={`http://twitter.com/share?url=https://docommunication.xyz/${roomID}&text=ここから編集に参加しましょう！&hashtags=#docommunication`}
-        text="Xで共有する"
+        text="シェアする"
       />
     </div>
   );
