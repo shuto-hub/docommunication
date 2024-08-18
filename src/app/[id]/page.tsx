@@ -1,9 +1,10 @@
 "use client";
-import SideMenu from "@/components/SideMenu";
+import Header from "@/components/layout/Header";
 import { useHistoryStore } from "@/store/historyStore";
 import dynamic from "next/dynamic";
 import { useParams } from "next/navigation";
 import { useEffect } from "react";
+
 const Editor = dynamic(() => import("@/components/Editor"), {
   ssr: false,
   loading: () => (
@@ -17,7 +18,7 @@ const Editor = dynamic(() => import("@/components/Editor"), {
     </div>
   ),
 });
-export default function Home() {
+const Detail = () => {
   const { addHistory } = useHistoryStore();
   // パスパラメータから値を取得
   const { id } = useParams();
@@ -28,11 +29,14 @@ export default function Home() {
   // 履歴にルームidを追加
   useEffect(() => {
     addHistory(id);
-  }, []);
+  }, [addHistory, id]);
   return (
-    <div className="p-2 h-screen flex">
-      <Editor roomID={id} />
-      <SideMenu roomID={id} />
-    </div>
+    <>
+      <Header roomID={id} />
+      <div className="p-2">
+        <Editor roomID={id} />
+      </div>
+    </>
   );
-}
+};
+export default Detail;
