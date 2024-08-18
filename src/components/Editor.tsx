@@ -36,7 +36,7 @@ const Editor: FC<EditorProps> = ({ roomID }) => {
   });
 
   return (
-    <div className="md:w-[80%] w-full">
+    <div className="w-full">
       <BlockNoteView editor={editor} />
     </div>
   );

@@ -1,13 +1,13 @@
 import { render, screen } from "@testing-library/react";
-import SideMenu from "../components/SideMenu";
+import Header from "../components/layout/Header";
 import { it } from "node:test";
 import React from "react";
-test("SideMenuコンポーネントのテスト", () => {
+test("Headerコンポーネントのテスト", () => {
   it("正しくレンダリングされる", () => {
-    render(<SideMenu roomID="foobar" />);
+    render(<Header roomID="foobar" />);
 
-    const SideMenuElement = screen.getByTestId("sidemenu");
+    const HeaderElement = screen.getByTestId("header");
 
-    expect(SideMenuElement).toBeInTheDocument;
+    expect(HeaderElement).toBeInTheDocument;
   });
 });
