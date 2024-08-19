@@ -1,6 +1,5 @@
 import { Liveblocks } from "@liveblocks/node";
 import { NextRequest, NextResponse } from "next/server";
-import { nanoid } from "nanoid";
 import { getRandomUser } from "@/utils/randomUser";
 
 const liveblocks = new Liveblocks({
@@ -9,7 +8,7 @@ const liveblocks = new Liveblocks({
 
 export async function POST(request: NextRequest) {
 
-  const liveSession = liveblocks.prepareSession(nanoid(), {
+  const liveSession = liveblocks.prepareSession("test-user", {
 
     // Optional, custom static metadata for the session
     userInfo: {
