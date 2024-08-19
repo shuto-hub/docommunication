@@ -1,11 +1,6 @@
+import { HistoryStore } from "@/types/HistoryStore";
 import { create } from "zustand";
 import { createJSONStorage, persist } from 'zustand/middleware';
-
-type HistoryStore = {
-  histories: string[];
-  addHistory: (history: string) => void;
-  removeHistory: (history: string) => void;
-};
 
 export const useHistoryStore = create(
   persist<HistoryStore>(

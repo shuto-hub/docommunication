@@ -1,12 +1,9 @@
 "use client";
+import { ShareButtonProps } from "@/types/ShareButton";
 import Image from "next/image";
 import Link from "next/link";
 import { FC } from "react";
-type ShareButtonProps = {
-  iconUrl: string;
-  shareUrl: string;
-  text: string;
-};
+
 const ShareButton: FC<ShareButtonProps> = ({ iconUrl, shareUrl, text }) => {
   return (
     <button

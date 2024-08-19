@@ -3,9 +3,8 @@ import Image from "next/image";
 import { FC } from "react";
 import ShareButton from "../ShareButton";
 import Link from "next/link";
-type HeaderProps = {
-  roomID: string;
-};
+import { HeaderProps } from "@/types/Header";
+
 // ヘッダー
 const Header: FC<HeaderProps> = ({ roomID }) => {
   return (
