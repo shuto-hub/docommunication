@@ -28,7 +28,7 @@ curl https://get.volta.sh | bash
 
 3. 環境編集でホスト名を取得している箇所があるため、ルートディレクトリに`.env.local`を作成し、`.env.example`の内容をコピーしてください
 
-4. 1. で作成したapiキーをLIVEBLOCKS_API_KEYとして`.env.local`に追記してください
+4. 手順1 で作成したapiキーをLIVEBLOCKS_API_KEYとして`.env.local`に追記してください
 
 5. 以下コマンドにより http://localhost:3000 にてローカル環境が起動できます
 
