@@ -27,7 +27,7 @@ const Detail = () => {
           <ClientSideSuspense
             fallback={
               <div
-                className="flex w-full h-full justify-center items-center"
+                className="bg-slate-900 rounded-xl m-2 h-[72px] flex justify-center border-2 items-center"
                 aria-label="読み込み中"
               >
                 <div className="animate-ping h-2 w-2 bg-white rounded-full"></div>
