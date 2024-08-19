@@ -1,23 +1,12 @@
 "use client";
 import Header from "@/components/layout/Header";
 import { useHistoryStore } from "@/store/historyStore";
-import dynamic from "next/dynamic";
 import { useParams } from "next/navigation";
 import { useEffect } from "react";
+import { ClientSideSuspense } from "@liveblocks/react";
+import { Editor } from "@/components/Editor";
+import { RoomProvider } from "@/liveblocks.config";
 
-const Editor = dynamic(() => import("@/components/Editor"), {
-  ssr: false,
-  loading: () => (
-    <div
-      className="flex md:w-[80%] w-full h-full justify-center items-center"
-      aria-label="読み込み中"
-    >
-      <div className="animate-ping h-2 w-2 bg-blue-600 rounded-full"></div>
-      <div className="animate-ping h-2 w-2 bg-blue-600 rounded-full mx-4"></div>
-      <div className="animate-ping h-2 w-2 bg-blue-600 rounded-full"></div>
-    </div>
-  ),
-});
 const Detail = () => {
   const { addHistory } = useHistoryStore();
   // パスパラメータから値を取得
@@ -34,7 +23,22 @@ const Detail = () => {
     <>
       <Header roomID={id} />
       <div className="p-2">
-        <Editor roomID={id} />
+        <RoomProvider id={id} initialPresence={{}}>
+          <ClientSideSuspense
+            fallback={
+              <div
+                className="bg-slate-900 rounded-xl m-2 h-[72px] flex justify-center border-2 items-center"
+                aria-label="読み込み中"
+              >
+                <div className="animate-ping h-2 w-2 bg-white rounded-full"></div>
+                <div className="animate-ping h-2 w-2 bg-white rounded-full mx-4"></div>
+                <div className="animate-ping h-2 w-2 bg-white rounded-full"></div>
+              </div>
+            }
+          >
+            <Editor />
+          </ClientSideSuspense>
+        </RoomProvider>
       </div>
     </>
   );

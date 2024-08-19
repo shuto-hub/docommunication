@@ -5,3 +5,7 @@
 body {
   font-family: "Nunito", sans-serif;
 }
+
+[contenteditable]:focus {
+  outline: 0px solid transparent;
+}
