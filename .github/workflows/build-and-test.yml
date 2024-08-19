@@ -4,13 +4,13 @@ on:
   pull_request:
   workflow_dispatch:
 
+env:
+  LIVEBLOCKS_API_KEY: ${{ secrets.LIVEBLOCKS_API_KEY }}
+
 jobs:
   build_and_test:
     name: Build and test
     runs-on: ubuntu-latest
-
-    env:
-      LIVEBLOCKS_API_KEY: ${{ secrets.LIVEBLOCKS_API_KEY }}
 
     steps:
       - name: Checkout
@@ -21,6 +21,9 @@ jobs:
         with:
           node-version: "lts/*"
           cache: "yarn"
+
+      - name: Debug .env
+        run: cat .env
 
       - name: Install dependencies
         run: yarn install
