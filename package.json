@@ -5,11 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "next dev",
-    "websocket": "PORT=1234 YPERSISTENCE=./dbDir node ./node_modules/y-websocket/bin/server.cjs",
     "build": "next build",
-    "start": "next start & yarn websocket",
+    "start": "next start",
     "lint": "next lint",
-    "docommunication": "yarn dev & yarn websocket",
     "type-check": "tsc --noEmit",
     "test": "yarn run jest"
   },
