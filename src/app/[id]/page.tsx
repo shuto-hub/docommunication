@@ -3,9 +3,13 @@ import Header from "@/components/layout/Header";
 import { useHistoryStore } from "@/store/historyStore";
 import { useParams } from "next/navigation";
 import { useEffect } from "react";
-import { ClientSideSuspense } from "@liveblocks/react";
+import {
+  ClientSideSuspense,
+  createRoomContext,
+  useUser,
+} from "@liveblocks/react";
 import { Editor } from "@/components/Editor";
-import { RoomProvider } from "@/liveblocks.config";
+import { createClient } from "@liveblocks/client";
 
 const Detail = () => {
   const { addHistory } = useHistoryStore();
@@ -15,6 +19,11 @@ const Detail = () => {
   if (typeof id !== "string") {
     throw new Error("Invalid ID");
   }
+  const client = createClient({
+    authEndpoint: "/api/auth",
+  });
+
+  const { RoomProvider } = createRoomContext(client);
   // 履歴にルームidを追加
   useEffect(() => {
     addHistory(id);
