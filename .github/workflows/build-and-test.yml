@@ -22,9 +22,6 @@ jobs:
           node-version: "lts/*"
           cache: "yarn"
 
-      - name: Debug .env
-        run: cat .env
-
       - name: Install dependencies
         run: yarn install
 
