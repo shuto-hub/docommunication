@@ -14,6 +14,8 @@ export default function Home() {
           src="/icon/logo.png"
           alt="doccomunication"
           fill
+          sizes="contain"
+          priority
         />
       </h1>
       <TopButton roomID={roomID} />

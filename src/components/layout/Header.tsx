@@ -3,9 +3,8 @@ import Image from "next/image";
 import { FC } from "react";
 import ShareButton from "../ShareButton";
 import Link from "next/link";
-type HeaderProps = {
-  roomID: string;
-};
+import { HeaderProps } from "@/types/Header";
+
 // ヘッダー
 const Header: FC<HeaderProps> = ({ roomID }) => {
   return (
@@ -19,6 +18,7 @@ const Header: FC<HeaderProps> = ({ roomID }) => {
           alt="doccomunication"
           width="30"
           height="30"
+          priority
         />
       </Link>
       <p className="ml-auto text-[10px] md:text-sm">ルームID：{roomID}</p>

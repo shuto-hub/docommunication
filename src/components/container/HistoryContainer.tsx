@@ -11,7 +11,7 @@ const HistoryContainer: FC = () => {
   }, [histories]);
   return (
     <>
-      {renderHistories && (
+      {renderHistories?.length && (
         <div className="fixed overflow-auto md:top-3 md:right-3 bottom-20 max-h-40 md:max-h-64 p-4 border-[#00acb5] border-2 rounded animate-fade-in-top">
           <p>最近見たルーム</p>
           <ul>

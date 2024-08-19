@@ -1,14 +1,5 @@
 // Define Liveblocks types for your application
-
-import { createClient } from "@liveblocks/client";
-import { createRoomContext } from "@liveblocks/react";
-
 // https://liveblocks.io/docs/api-reference/liveblocks-react#Typing-your-data
-const client = createClient({
-  authEndpoint: "/api/auth",
-});
-
-export const { RoomProvider } = createRoomContext(client); // 追加
 
 declare global {
   interface Liveblocks {

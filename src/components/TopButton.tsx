@@ -1,9 +1,8 @@
 "use client";
+import { TopButtonProps } from "@/types/TopButton";
 import Link from "next/link";
 import { FC, useState } from "react";
-type TopButtonProps = {
-  roomID: string;
-};
+
 const TopButton: FC<TopButtonProps> = ({ roomID }) => {
   const [isLoading, setIsLoading] = useState(false);
   const handleClick = () => setIsLoading(true);

@@ -4,6 +4,9 @@ on:
   pull_request:
   workflow_dispatch:
 
+env:
+  LIVEBLOCKS_API_KEY: ${{ secrets.LIVEBLOCKS_API_KEY }}
+
 jobs:
   build_and_test:
     name: Build and test
@@ -18,9 +21,6 @@ jobs:
         with:
           node-version: "lts/*"
           cache: "yarn"
-
-      - name: Set environment variables
-        run: echo "LIVEBLOCKS_API_KEY=${{ secrets.LIVEBLOCKS_API_KEY }}" >> .env.local
 
       - name: Install dependencies
         run: yarn install

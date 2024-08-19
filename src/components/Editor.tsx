@@ -63,7 +63,9 @@ export const Editor: React.FC = () => {
           <RichTextPlugin
             contentEditable={<ContentEditable />}
             placeholder={
-              <p className="text-slate-300 absolute top-4">Enter a text</p>
+              <p className="text-slate-300 absolute top-4">
+                please enter the text
+              </p>
             }
             ErrorBoundary={LexicalErrorBoundary}
           />
