@@ -18,6 +18,7 @@ const Header: FC<HeaderProps> = ({ roomID }) => {
           alt="doccomunication"
           width="30"
           height="30"
+          priority
         />
       </Link>
       <p className="ml-auto text-[10px] md:text-sm">ルームID：{roomID}</p>
